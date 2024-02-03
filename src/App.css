@@ -1,11 +1,78 @@
 .App {
   margin: 0;
   padding: 0;
-  color: white;
+}
 
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* background-color: red; */
+
+h1 {
+  text-align: center;
+}
+
+.main {
+  background-color: rgb(42, 42, 42);
+  padding: 2%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0px 5px 7px rgb(70, 70, 70);
+}
+
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid rgb(99, 99, 99);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.todo-input-stuff {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+}
+
+.todo-input-stuff lebel {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-stuff input {
+  padding: 8px;
+  border: none;
+  width: 250px;
+}
+
+.todo-input-stuff input:focus {
+  outline: none;
+  outline: 2px solid goldenrod;
+}
+
+.mainBtn {
+  background-color: goldenrod;
+  color: white;
+  border: none;
+  border-radius: 0;
+  margin-top: 25px;
+  padding: 10px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.mainBtn:hover {
+  background-color: gold;
+}
+
+.btn2 {
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 0;
+  margin-top: 25px;
+  padding: 10px;
+  cursor: pointer;
 }
