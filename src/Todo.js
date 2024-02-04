@@ -5,7 +5,6 @@ import { FaCheck } from "react-icons/fa";
 
 function Todo() {
 
-    // const [isCompleteScreen, setIsCompleteScreen] = useState(false);
     const [allToDo, setAllToDo] = useState([]);
     const [newTitle, setNewTitle] = useState('');
     const [newDesc, setNewDesc] = useState('');
@@ -31,10 +30,19 @@ function Todo() {
         }
     }, [])
 
+    const deleteTask = (index) => {
+        let reducedTodo = [...allToDo]
+        reducedTodo.splice(index)
+
+        localStorage.setItem('todolist', JSON.stringify(reducedTodo))
+        setAllToDo(reducedTodo)
+    }
+
     return (
         <div className='todo mt-3'>
 
             <h1 className='text-center font-bold text-5xl'>Todo Web App</h1>
+            <h2 className='text-center mt-2 text-green-800'>Developed By: Om Prakash Mallik</h2>
 
             <div className='main'>
 
@@ -53,10 +61,10 @@ function Todo() {
                 </div>
 
 
-                <div className='btn-area mb-4'>
+                {/* <div className='btn-area mb-4'>
                     <button className='btn2 bg-green-500'>Todo</button>
                     <button className='btn2 bg-slate-950'>Completed</button>
-                </div>
+                </div> */}
 
 
                 <div className='flex flex-col justify-between'>
@@ -70,7 +78,7 @@ function Todo() {
                                 </div>
 
                                 <div className='flex items-center p-6 pb-2.5 py-2.5 mb-2.5 justify-between'>
-                                    <AiOutlineDelete className='text-2xl cursor-pointer text-white hover:text-red-600' />
+                                    <AiOutlineDelete onClick={() => deleteTask(index)} className='text-2xl cursor-pointer text-white hover:text-red-600' />
                                     <FaCheck className='ml-2.5 text-2xl cursor-pointer text-green-500 hover:text-green-300' />
                                 </div>
                             </div>
@@ -78,10 +86,8 @@ function Todo() {
                     })}
                 </div>
 
-
-
-
             </div>
+
         </div>
     )
 }
