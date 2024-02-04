@@ -1,0 +1,5 @@
+- add task feature ✅
+- remove task feature ✅
+- store in local memory ✅
+- make check mark functional
+- make responsive
