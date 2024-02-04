@@ -20,6 +20,7 @@ function Todo() {
         setAllToDo(updatedTodo);
 
         localStorage.setItem('todolist', JSON.stringify(updatedTodo))
+
     }
 
 
@@ -32,7 +33,7 @@ function Todo() {
 
     const deleteTask = (index) => {
         let reducedTodo = [...allToDo]
-        reducedTodo.splice(index)
+        reducedTodo.splice(index, 1)
 
         localStorage.setItem('todolist', JSON.stringify(reducedTodo))
         setAllToDo(reducedTodo)
@@ -42,7 +43,7 @@ function Todo() {
         <div className='todo mt-3'>
 
             <h1 className='text-center font-bold text-5xl'>Todo Web App</h1>
-            <h2 className='text-center mt-2 text-green-800'>Developed By: Om Prakash Mallik</h2>
+            <h2 className='text-center mt-2 text-green-800 font-bold'>Developed By: Om Prakash Mallik</h2>
 
             <div className='main'>
 
@@ -59,12 +60,6 @@ function Todo() {
                         <button className='mainBtn bg-green-500' onClick={todoAdd}>Add</button>
                     </div>
                 </div>
-
-
-                {/* <div className='btn-area mb-4'>
-                    <button className='btn2 bg-green-500'>Todo</button>
-                    <button className='btn2 bg-slate-950'>Completed</button>
-                </div> */}
 
 
                 <div className='flex flex-col justify-between'>
